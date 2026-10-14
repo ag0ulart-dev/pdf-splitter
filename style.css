@@ -1,1 +1,178 @@
+```css
+:root {
+    color-scheme: dark;
+    --background: #111111;
+    --surface: #191919;
+    --border: #303030;
+    --text: #eeeeee;
+    --muted: #929292;
+    --accent: #d8d8d8;
+}
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: Inter, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 72px 24px 32px;
+}
+
+.container {
+    width: 100%;
+    max-width: 720px;
+}
+
+header {
+    margin-bottom: 48px;
+}
+
+.eyebrow {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: clamp(48px, 10vw, 76px);
+    letter-spacing: -5px;
+    font-weight: 700;
+}
+
+h1 span {
+    color: var(--muted);
+}
+
+.subtitle {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.workspace {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 24px;
+    border-radius: 12px;
+}
+
+.dropzone {
+    min-height: 220px;
+    border: 1px dashed #454545;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+    padding: 24px;
+    cursor: pointer;
+    transition: border-color 180ms ease, background 180ms ease;
+}
+
+.dropzone:hover {
+    border-color: #aaaaaa;
+    background: #202020;
+}
+
+.upload-icon {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+}
+
+.dropzone strong {
+    font-size: 15px;
+}
+
+.dropzone > span:last-of-type {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.dropzone input {
+    max-width: 100%;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.file-info {
+    color: var(--muted);
+    font-size: 12px;
+    margin: 18px 0;
+    overflow-wrap: anywhere;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    background: var(--accent);
+    color: #111111;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 180ms ease;
+}
+
+button:hover:not(:disabled) {
+    opacity: 0.85;
+}
+
+button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+#status {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 16px;
+    line-height: 1.6;
+}
+
+footer {
+    margin-top: 28px;
+    color: #777777;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 44px 16px 24px;
+    }
+
+    .workspace {
+        padding: 14px;
+    }
+
+    .dropzone {
+        min-height: 200px;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+}
+```
